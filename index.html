@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <html lang="vi">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard Bao Cao Ve JP</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+      <nav class="bg-blue-600 text-white p-4 shadow-lg">
+          <div class="container mx-auto flex justify-between items-center">
+              <h1 class="text-2xl font-bold">BAO CAO VE JP</h1>
+              <div class="flex gap-4">
+                  <button id="syncBtn" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded font-semibold transition">Dong bo API</button>
+                  <input type="file" id="csvFile" class="hidden" accept=".csv">
+                  <button onclick="document.getElementById('csvFile').click()" class="bg-white text-blue-600 hover:bg-gray-100 px-4 py-2 rounded font-semibold transition">Tai file CSV</button>
+              </div>
+          </div>
+      </nav>
+      <main class="container mx-auto p-6">
+          <div id="loading" class="hidden text-center py-10">
+              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <p class="mt-4 text-gray-600">Dang tai du lieu...</p>
+          </div>
+          <div id="dashboard" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="bg-white p-6 rounded-lg shadow">
+                  <h2 class="text-xl font-semibold mb-4">Trang thai giao hang</h2>
+                  <div class="h-64"><canvas id="statusChart"></canvas></div>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow">
+                  <h2 class="text-xl font-semibold mb-4">Don hang theo Tinh/Thanh</h2>
+                  <div class="h-64"><canvas id="provinceChart"></canvas></div>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow lg:col-span-2">
+                  <h2 class="text-xl font-semibold mb-4">Xu huong don hang theo ngay</h2>
+                  <div class="h-64"><canvas id="trendChart"></canvas></div>
+              </div>
+          </div>
+      </main>
+      <script src="app.js"></script>
+  </body>
+  </html>
