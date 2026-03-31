@@ -57,22 +57,22 @@
         <!-- Header -->
         <header class="flex flex-col sm:flex-row justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-gray-900">Haravan Sales Dashboard</h1>
-            <div class="text-sm text-gray-500 mt-2 sm:mt-0">Cập nhật lúc: <span id="lastUpdated" class="font-medium text-gray-700">Đang tải...</span></div>
+            <div class="text-sm text-gray-500 mt-2 sm:mt-0">Cáº­p nháº­t lÃºc: <span id="lastUpdated" class="font-medium text-gray-700">Äang táº£i...</span></div>
         </header>
 
         <!-- File Input Section -->
         <div class="card mb-6 bg-blue-50 border border-blue-100">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="mb-4 md:mb-0">
-                    <h3 class="text-sm font-semibold text-blue-900">Tải dữ liệu báo cáo</h3>
-                    <p class="text-xs text-blue-700 mt-1">Sử dụng file <strong>CapNhatDuLieu.bat</strong> để tải bản mới nhất, sau đó dùng nút <strong>Choose File</strong>.</p>
+                    <h3 class="text-sm font-semibold text-blue-900">Táº£i dá»¯ liá»‡u bÃ¡o cÃ¡o</h3>
+                    <p class="text-xs text-blue-700 mt-1">Sá»­ dá»¥ng file <strong>CapNhatDuLieu.bat</strong> Ä‘á»ƒ táº£i báº£n má»›i nháº¥t, sau Ä‘Ã³ dÃ¹ng nÃºt <strong>Choose File</strong>.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 items-center">
                     <button id="syncApiBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full text-sm transition-colors flex items-center shadow-sm">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                        Đồng bộ API
+                        Äá»“ng bá»™ API
                     </button>
-                    <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">hoặc</span>
+                    <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">hoáº·c</span>
                     <input type="file" id="csvFileInput" accept=".csv" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
                 </div>
             </div>
@@ -83,41 +83,41 @@
             <!-- Row 1: Dropdowns and Dates -->
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4 items-end">
                 <div>
-                    <label class="filter-label" for="fromDate">Từ ngày</label>
+                    <label class="filter-label" for="fromDate">Tá»« ngÃ y</label>
                     <input type="date" id="fromDate" class="filter-input">
                 </div>
                 <div>
-                    <label class="filter-label" for="toDate">Đến ngày</label>
+                    <label class="filter-label" for="toDate">Äáº¿n ngÃ y</label>
                     <input type="date" id="toDate" class="filter-input">
                 </div>
                 <div>
-                    <label class="filter-label" for="channelFilter">Kênh bán</label>
+                    <label class="filter-label" for="channelFilter">KÃªnh bÃ¡n</label>
                     <select id="channelFilter" class="filter-input">
-                        <option value="all">Tất cả</option>
+                        <option value="all">Táº¥t cáº£</option>
                     </select>
                 </div>
                 <div>
-                    <label class="filter-label" for="productFilter">Sản phẩm</label>
+                    <label class="filter-label" for="productFilter">Sáº£n pháº©m</label>
                     <select id="productFilter" class="filter-input">
-                        <option value="all">Tất cả</option>
+                        <option value="all">Táº¥t cáº£</option>
                     </select>
                 </div>
                 <div>
                     <button id="applyFilterBtn" class="w-full bg-primary hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors shadow-sm">
-                        Áp dụng
+                        Ãp dá»¥ng
                     </button>
                 </div>
             </div>
             
             <!-- Row 2: Presets -->
             <div class="flex flex-wrap gap-2" id="presetButtons">
-                <button class="preset-btn" data-preset="today">Hôm nay</button>
-                <button class="preset-btn" data-preset="yesterday">Hôm qua</button>
-                <button class="preset-btn" data-preset="thisWeek">Tuần này</button>
-                <button class="preset-btn" data-preset="last7Days">7 ngày qua</button>
-                <button class="preset-btn" data-preset="thisMonth">Tháng này</button>
-                <button class="preset-btn" data-preset="lastMonth">Tháng trước</button>
-                <button class="preset-btn active" data-preset="all">Tất cả</button>
+                <button class="preset-btn" data-preset="today">HÃ´m nay</button>
+                <button class="preset-btn" data-preset="yesterday">HÃ´m qua</button>
+                <button class="preset-btn" data-preset="thisWeek">Tuáº§n nÃ y</button>
+                <button class="preset-btn" data-preset="last7Days">7 ngÃ y qua</button>
+                <button class="preset-btn" data-preset="thisMonth">ThÃ¡ng nÃ y</button>
+                <button class="preset-btn" data-preset="lastMonth">ThÃ¡ng trÆ°á»›c</button>
+                <button class="preset-btn active" data-preset="all">Táº¥t cáº£</button>
             </div>
         </section>
 
@@ -127,7 +127,7 @@
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <p class="mt-2 text-gray-500">Đang xử lý dữ liệu...</p>
+            <p class="mt-2 text-gray-500">Äang xá»­ lÃ½ dá»¯ liá»‡u...</p>
         </div>
 
         <div id="dashboardContent">
@@ -135,9 +135,9 @@
             <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <!-- Total Revenue -->
                 <div class="card relative overflow-hidden">
-                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">TỔNG DOANH THU</div>
-                    <div class="text-2xl font-bold text-gray-900 mb-1" id="valRevenue">0 ₫</div>
-                    <div class="text-xs text-gray-400">chỉ tính đơn đã thanh toán</div>
+                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">Tá»”NG DOANH THU</div>
+                    <div class="text-2xl font-bold text-gray-900 mb-1" id="valRevenue">0 â‚«</div>
+                    <div class="text-xs text-gray-400">chá»‰ tÃ­nh Ä‘Æ¡n Ä‘Ã£ thanh toÃ¡n</div>
                     <div class="absolute right-0 top-0 mt-5 mr-4 text-primary opacity-20">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                     </div>
@@ -145,7 +145,7 @@
 
                 <!-- Total Orders -->
                 <div class="card relative overflow-hidden">
-                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">TỔNG ĐƠN HÀNG</div>
+                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">Tá»”NG ÄÆ N HÃ€NG</div>
                     <div class="text-2xl font-bold text-gray-900 mb-1" id="valOrders">0</div>
                     <div class="text-xs text-gray-500" id="valOrdersBreakdown">POS: 0 | Web: 0</div>
                     <div class="absolute right-0 top-0 mt-5 mr-4 text-emerald-500 opacity-20">
@@ -155,7 +155,7 @@
 
                 <!-- Total Tickets -->
                 <div class="card relative overflow-hidden">
-                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">TỔNG VÉ/SẢN PHẨM BÁN</div>
+                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">Tá»”NG VÃ‰/Sáº¢N PHáº¨M BÃN</div>
                     <div class="text-2xl font-bold text-gray-900 mb-1" id="valTickets">0</div>
                     <div class="text-xs text-gray-400">&nbsp;</div>
                     <div class="absolute right-0 top-0 mt-5 mr-4 text-purple-500 opacity-20">
@@ -165,8 +165,8 @@
 
                 <!-- Avg Ticket Value -->
                 <div class="card relative overflow-hidden">
-                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">GIÁ TB / ĐƠN</div>
-                    <div class="text-2xl font-bold text-gray-900 mb-1" id="valAvgTicket">0 ₫</div>
+                    <div class="text-xs text-gray-500 font-medium mb-1 truncate">GIÃ TB / ÄÆ N</div>
+                    <div class="text-2xl font-bold text-gray-900 mb-1" id="valAvgTicket">0 â‚«</div>
                     <div class="text-xs text-gray-400">&nbsp;</div>
                     <div class="absolute right-0 top-0 mt-5 mr-4 text-rose-500 opacity-20">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
@@ -178,12 +178,12 @@
             <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
                 <!-- Bar Chart (Top Products) -->
                 <div class="card lg:col-span-2">
-                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Top Doanh thu theo Sản phẩm</h3>
+                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Top Doanh thu theo Sáº£n pháº©m</h3>
                     <div id="chartProducts" class="w-full h-[300px]"></div>
                 </div>
                 <!-- Donut Chart (Channel Sales) -->
                 <div class="card lg:col-span-1">
-                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Doanh thu theo Kênh bán hàng</h3>
+                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Doanh thu theo KÃªnh bÃ¡n hÃ ng</h3>
                     <div id="chartChannels" class="w-full h-[300px] flex items-center justify-center"></div>
                 </div>
             </section>
@@ -192,7 +192,7 @@
             <section class="mb-6">
                 <!-- Line Chart (Revenue Over Time) -->
                 <div class="card">
-                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Biến động Doanh thu theo thời gian</h3>
+                    <h3 class="text-sm font-semibold text-gray-800 mb-4">Biáº¿n Ä‘á»™ng Doanh thu theo thá»i gian</h3>
                     <div id="chartTime" class="w-full h-[300px]"></div>
                 </div>
             </section>
@@ -202,16 +202,16 @@
                 <!-- Product Details Table -->
                 <div class="card overflow-hidden !p-0">
                     <div class="p-5 border-b border-gray-100">
-                        <h3 class="text-sm font-semibold text-gray-800">Chi tiết Sản phẩm</h3>
+                        <h3 class="text-sm font-semibold text-gray-800">Chi tiáº¿t Sáº£n pháº©m</h3>
                     </div>
                     <div class="overflow-x-auto max-h-[400px] overflow-y-auto">
                         <table class="min-w-full divide-y divide-gray-200 text-sm">
                             <thead class="bg-gray-50 sticky top-0">
                                 <tr>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sản phẩm</th>
-                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Số lượng</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sáº£n pháº©m</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Sá»‘ lÆ°á»£ng</th>
                                     <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Doanh thu</th>
-                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Trung bình</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Trung bÃ¬nh</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200" id="tableProductsBody">
@@ -224,18 +224,18 @@
                 <!-- Recent Orders Table -->
                 <div class="card overflow-hidden !p-0">
                     <div class="p-5 border-b border-gray-100 flex justify-between items-center">
-                        <h3 class="text-sm font-semibold text-gray-800">Đơn hàng gần đây (20 đơn mới nhất)</h3>
+                        <h3 class="text-sm font-semibold text-gray-800">ÄÆ¡n hÃ ng gáº§n Ä‘Ã¢y (20 Ä‘Æ¡n má»›i nháº¥t)</h3>
                     </div>
                     <div class="overflow-x-auto max-h-[400px] overflow-y-auto">
                         <table class="min-w-full divide-y divide-gray-200 text-sm">
                             <thead class="bg-gray-50 sticky top-0">
                                 <tr>
-                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mã đơn</th>
-                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian</th>
-                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Khách hàng</th>
-                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider pr-20">Sản phẩm</th>
-                                    <th class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Thành tiền</th>
-                                    <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Trạng thái</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">MÃ£ Ä‘Æ¡n</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thá»i gian</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">KhÃ¡ch hÃ ng</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider pr-20">Sáº£n pháº©m</th>
+                                    <th class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">ThÃ nh tiá»n</th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Tráº¡ng thÃ¡i</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200" id="tableOrdersBody">
