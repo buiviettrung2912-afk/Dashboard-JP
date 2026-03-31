@@ -1,1 +1,38 @@
-<!DOCTYPE html><html><head><title>Haravan Sales Dashboard</title><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script><script src="https://cdn.jsdelivr.net/npm/apexcharts"></script><script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/dist/date-fns.min.js"></script></head><body class="bg-gray-100"><div class="max-w-7xl mx-auto p-6"><header class="flex justify-between items-center mb-6"><h1 class="text-2xl font-bold">Haravan Sales Dashboard</h1><div id="lastUpdated" class="text-sm text-gray-500">Dang tai...</div></header><div id="loadingIndicator" class="text-center py-20"><p>Dang xu ly du lieu...</p></div><div id="dashboardContent" class="hidden"><div class="grid grid-cols-4 gap-4 mb-6"><div class="bg-white p-5 rounded-lg shadow"><div class="text-xs text-gray-500 mb-1">DOANH THU</div><div id="valRevenue" class="text-2xl font-bold text-blue-600">0</div></div><div class="bg-white p-5 rounded-lg shadow"><div class="text-xs text-gray-500 mb-1">DON HANG</div><div id="valOrders" class="text-2xl font-bold">0</div></div><div class="bg-white p-5 rounded-lg shadow"><div class="text-xs text-gray-500 mb-1">VE BAN</div><div id="valTickets" class="text-2xl font-bold text-green-600">0</div></div><div class="bg-white p-5 rounded-lg shadow"><div class="text-xs text-gray-500 mb-1">TB/DON</div><div id="valAvgTicket" class="text-2xl font-bold">0</div></div></div><div class="grid grid-cols-2 gap-6 mb-6"><div class="bg-white p-5 rounded-lg shadow"><h3 class="font-semibold mb-4">Top San Pham</h3><div id="chartProducts" class="h-64"></div></div><div class="bg-white p-5 rounded-lg shadow"><h3 class="font-semibold mb-4">Kenh Ban</h3><div id="chartChannels" class="h-64"></div></div></div><div class="bg-white p-5 rounded-lg shadow mb-6"><h3 class="font-semibold mb-4">Bien dong theo thoi gian</h3><div id="chartTime" class="h-64"></div></div></div></div><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/dist/date-fns.min.js"></script>
+  </head>
+<body class="bg-gray-100">
+<div class="max-w-7xl mx-auto p-6">
+<h1 class="text-2xl font-bold mb-4">Dashboard Ban Hang</h1>h1>
+<div id="lastUpdated" class="text-sm mb-4"></div>div>
+<div id="loadingIndicator" class="py-10 text-center">Processing...</div>div>
+<div id="dashboardContent" class="hidden">
+<div class="grid grid-cols-4 gap-4 mb-6">
+<div class="bg-white p-4 rounded shadow"><div class="text-xs text-gray-500">DOANH THU</div>div><div id="valRevenue" class="text-xl font-bold text-blue-600">0</div>div></div>div>
+<div class="bg-white p-4 rounded shadow"><div class="text-xs text-gray-500">DON HANG</div>div><div id="valOrders" class="text-xl font-bold">0</div>div></div>div>
+<div class="bg-white p-4 rounded shadow"><div class="text-xs text-gray-500">VE BAN</div>div><div id="valTickets" class="text-xl font-bold text-green-600">0</div>div></div>div>
+<div class="bg-white p-4 rounded shadow"><div class="text-xs text-gray-500">TB/DON</div>div><div id="valAvgTicket" class="text-xl font-bold">0</div>div></div>div>
+</div>div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-white p-4 rounded shadow"><h2 class="font-bold mb-2">Top San Pham</h2>h2><div id="chartProducts" style="height:300px"></div>div></div>div>
+<div class="bg-white p-4 rounded shadow"><h2 class="font-bold mb-2">Kenh Ban</h2>h2><div id="chartChannels" style="height:300px"></div>div></div>div>
+</div>div>
+<div class="bg-white p-4 rounded shadow mb-6"><h2 class="font-bold mb-2">Doanh thu theo thoi gian</h2>h2><div id="chartTime" style="height:300px"></div>div></div>div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white rounded shadow overflow-hidden"><div class="p-4 border-b font-bold">Chi tiet San pham</div>div><div class="overflow-auto" style="max-height:400px"><table class="min-w-full text-sm"><thead class="bg-gray-50 sticky top-0"><tr><th class="px-4 py-2 text-left">San pham</th>th><th class="px-4 py-2 text-right">So luong</th>th><th class="px-4 py-2 text-right">Doanh thu</th>th><th class="px-4 py-2 text-right">Trung binh</th>th></tr></thead>thead><tbody id="tableProductsBody"></tbody>tbody></table>table></div>div></div>div>
+<div class="bg-white rounded shadow overflow-hidden"><div class="p-4 border-b font-bold">Don hang gan day</div>div><div class="overflow-auto" style="max-height:400px"><table class="min-w-full text-sm"><thead class="bg-gray-50 sticky top-0"><tr><th class="px-4 py-2 text-left">Ma don</th>th><th class="px-4 py-2 text-left">Thoi gian</th>th><th class="px-4 py-2 text-left">Khach hang</th>th><th class="px-4 py-2 text-left">San pham</th>th><th class="px-4 py-2 text-right">Thanh tien</th>th><th class="px-4 py-2 text-center">Trang thai</th>th></tr></thead>thead><tbody id="tableOrdersBody"></tbody>tbody></table>table></div>div></div>div>
+</div>div>
+</div>div>
+</div>div>
+<script src="app.js"></script>
+</body>body>
+</html></tr></tr></title>
+  </head>
+</html>
